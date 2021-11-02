@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+		<script>
+				
+		function test_get(value){
+
+			$.ajax({ 
+			
+				data: { name: "John" },
+				url: "test_get.php",
+				
+				type: 'get',
+				
+				dataType : "text",
+				
+				async: true,
+				success: function(respuesta){ 
+					
+					alert(respuesta);
+					
+				}
+				
+				});  
+			
+		}
+
+		function test_post(){
+						
+			$.post("test_post.php",
+			{
+			name: "Donald Duck"
+			},
+			function(data,status){
+			
+				if(status=="success"){
+			
+					alert("Data: " + data + "\nStatus: " + status);
+				
+				}
+				
+			});
+									
+		}
+
+		</script>
+	
+	</head>
+	
+	<body>
+	
+		<button onclick="test_get(1)">Get</button>
+	
+		<button onclick="test_post()">Post</button>
+
+	</body>
+	
+</html>
