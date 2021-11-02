@@ -8,11 +8,11 @@
 	
 		<script>
 				
-		function test_get(value){
+		function test_get(valor){
 
 			$.ajax({ 
 			
-				data: { name: "John" },
+				data: { name: valor },
 				url: "test_get.php",
 				
 				type: 'get',
@@ -30,11 +30,11 @@
 			
 		}
 
-		function test_post(){
+		function test_post(valor){
 						
 			$.post("test_post.php",
 			{
-			name: "Donald Duck"
+			name: valor
 			},
 			function(data,status){
 			
@@ -54,9 +54,9 @@
 	
 	<body>
 	
-		<button onclick="test_get(1)">Get</button>
+		<button onclick="test_get('John')">Get</button>
 	
-		<button onclick="test_post()">Post</button>
+		<button onclick="test_post('Donald Duck')">Post</button>
 
 	</body>
 	
